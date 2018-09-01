@@ -1,33 +1,33 @@
-#Files imports
 from flask import render_template,request,redirect,url_for
-# from app import app
 from . import main
-from ..requests import get_source,get_article
-from ..models import Source
+from ..request import get_sources,get_articles
 
-
-#Views
-@main.route("/")
+#views
+@main.route('/')
 def index():
-    return render_template("index.html")
-
-@main.route('/articles') #Define route decorator with main blueprint instance
-def articles(): #Article function that 
     '''
-    View article page function that returns the articles details page and its data
+    View root page function that returns the index page and 
+    its data
     '''
 
-    articles = get_article()
-    return render_template('article.html', articles = articles) #Returns response of article.html
+    #get general sources
+    general_sources = get_sources('general')
+    sports_sources = get_sources('sports')
+    technology_sources = get_sources('technology')
+    entertainment_sources = get_sources('entertainment')
+    business_sources = get_sources('business')
+    health_sources = get_sources('health')
+    science_sources = get_sources('science')
 
-    
+    title = 'Home - Welcome to the best Online News Website'
+    return render_template('index.html',business = business_sources,health=health_sources,science=science_sources,title=title,sports = sports_sources, technology = technology_sources,entertainment = entertainment_sources ,general=general_sources)
 
-@main.route('/sources')
-def source():
+@main.route('/news/<id>')
+def news(id):
     '''
-
+    view page function that returns the news articles and its data
     '''
-    sources = get_source()
-    print(sources)
-   
-    return render_template('source.html', sources = sources)
+    articles = get_articles(id)
+    title = 'Home - Welcome to the best Online News Website'
+
+    return render_template('news.html', articles=articles, title=title)

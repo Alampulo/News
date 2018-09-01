@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_bootstrap3 import Bootstrap
+from flask_bootstrap import Bootstrap
 from config import config_options
 
 bootstrap = Bootstrap()
@@ -8,20 +8,18 @@ def create_app(config_name):
 
     app = Flask(__name__)
 
-    # Creating the app configurations
+    #creating the app configurations
     app.config.from_object(config_options[config_name])
 
-    # Initializing flask extensions
+    #initializing flask extensions
     bootstrap.init_app(app)
 
-    #Registering the blueprint
+    #registering blueprint
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
     #setting config
-    from .requests import configure_request #Importing configure_request function
-    configure_request(app) #Calling the function and passing the app instance
-
-    # Will add the views and forms
-
+    from .request import configure_request
+    configure_request(app)
+    
     return app
