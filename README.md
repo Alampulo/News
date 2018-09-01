@@ -32,4 +32,4 @@ Github - [Alampulo](https://github.com/Alampulo)
 ### License
 This is an open source software therefore the license is [MIT](https://choosealicense.com/licenses/mit/)
 <br>
-Copyright (c) 2017 **Bryan juma**
+Copyright (c) 2018 **Bryan juma**
