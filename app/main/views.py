@@ -19,3 +19,14 @@ def articles(): #Article function that
 
     articles = get_article()
     return render_template('article.html', articles = articles) #Returns response of article.html
+
+
+@main.route('/sources')
+def source():
+    '''
+
+    '''
+    sources = get_source()
+    print(sources)
+
+    return render_template('source.html', sources = sources)
