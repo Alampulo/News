@@ -2,10 +2,10 @@ import urllib.request
 import json
 from .models import Source,Article
 
-#getting api key
+# getting api key
 api_key = None
 
-#getting news base url
+#getting the  news-base url
 base_url = None
 article_url = None
 
@@ -87,7 +87,7 @@ def process_articles(articles_list):
         source_dictionary['name'] = source_id['name']
         id = source_dictionary['id']
         name = source_dictionary['name']
-        
+
         author = result.get('author')
         title = result.get('title')
         description = result.get('description')
