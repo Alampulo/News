@@ -6,11 +6,11 @@ from ..request import get_sources,get_articles
 @main.route('/')
 def index():
     '''
-    View root page function that returns the index page and 
+    View root page function that returns the index page and
     its data
     '''
 
-    #get general sources
+    # getting the general sources
     general_sources = get_sources('general')
     sports_sources = get_sources('sports')
     technology_sources = get_sources('technology')
@@ -19,7 +19,7 @@ def index():
     health_sources = get_sources('health')
     science_sources = get_sources('science')
 
-    title = 'Home - Welcome to the best Online News Website'
+    title = 'Home - Juma's Online News Website'
     return render_template('index.html',business = business_sources,health=health_sources,science=science_sources,title=title,sports = sports_sources, technology = technology_sources,entertainment = entertainment_sources ,general=general_sources)
 
 @main.route('/news/<id>')
