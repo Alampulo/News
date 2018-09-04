@@ -1,6 +1,7 @@
 # NEWS HIGHLIGHT
 #### A News highlight  application that gets information from NEWS API  allowing users to go to the original news source and get full information.
-#### By ****Bryan Juma****
+## Author
+Bryan Juma
 
 It allows you to click on the category of news tab, then select your desired source from a list and it directs you to the articles source
 
