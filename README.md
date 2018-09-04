@@ -1,5 +1,5 @@
 # NEWS HIGHLIGHT
-#### A News highlight  application that gets information from NEWS API  allowING users to go to the original news source and get full information.
+#### A News highlight  application that gets information from NEWS API  allowing users to go to the original news source and get full information.
 #### By ****Bryan Juma****
 
 It allows you to click on the category of news tab, then select your desired source from a list and it directs you to the articles source
@@ -7,6 +7,7 @@ It allows you to click on the category of news tab, then select your desired sou
 ## Requirements
 * Browser
 * Good internet connection
+* virtualEnvironment
 
 ## How to use
 * Open the site - link [here](https://github.com)
@@ -16,10 +17,9 @@ It allows you to click on the category of news tab, then select your desired sou
 * A short description is given. For more information click on the link.
 
 ## Technologies used
-
-This is a flask application:
-* HTML/ CSS
-* Python :flask
+* Bootstrap
+* HTML / CSS
+* Python /flask
 
 Hosted on HEROKU
 
