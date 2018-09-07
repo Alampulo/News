@@ -2,7 +2,7 @@ import urllib.request
 import json
 from .models import Source,Article
 
-# getting api key
+# getting  the api key
 api_key = None
 
 #getting the  news-base url
@@ -82,11 +82,7 @@ def process_articles(articles_list):
     article_results = []
     source_dictionary = {}
     for result in articles_list:
-        # source_id = result ['source']
-        # source_dictionary['id'] = source_id['id']
-        # source_dictionary['name'] = source_id['name']
-        # id = source_dictionary['id']
-        # name = source_dictionary['name']
+
         source= result.get('source')
         author = result.get('author')
         title = result.get('title')
