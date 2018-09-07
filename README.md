@@ -7,8 +7,7 @@ It allows you to click on the category of news tab, then select your desired sou
 
 ## Requirements
 * Browser
-* Good internet connection
-* virtualEnvironment
+* virtual environment
 
 ## How to use
 * Open the site - link [here](https://github.com)
@@ -31,6 +30,6 @@ Email me at - (jumabryan10@gmail.com)
 Github - [Alampulo](https://github.com/Alampulo)
 
 ### License
-This is an open source software therefore the license is [MIT](https://choosealicense.com/licenses/mit/)
+This is an open source software therefore the license is [MIT]
 
 Copyright (c) 2018 **Bryan juma**

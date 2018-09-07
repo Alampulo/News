@@ -1,69 +1,20 @@
 {% extends 'base.html'%}
 {%block content%}
-<ul>
+<ul style="background-color:black;">
 
-
+<div class="row">
   {%for source in sources%}
-<li>  <h4>{{source.name}}</h4></li>
-<li> <a href='/news/{{source.id}}'>view articles</a></li>
+  <div class="col-md-4">
+
+    <li>  <h4>{{source.name}}</h4></li>
+    <li> <a href='/news/{{source.id}}'>view articles</a></li>
+</div>
   {%endfor%}
+</div>
+
   </ul>
 {%endblock%}
 
-
-
-
-
-
-<!-- {% import 'macros.html' as macro%} -->
-
-<!-- styles block-->
-    <!-- {% block styles %}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-    {% endblock %} -->
-<!-- end of styles -->
-
-
-
-          <!-- <div class="tab-content">
-
-            <div id="general" class="tab-pane fade">
-               <ul>
-
-
-
-                {%for source in sources%}
-                <li>{{source.name}}</li>
-                 {%endfor%}
-                 </ul>
-            </div> -->
-            <!-- <div id="sports" class="tab-pane fade">
-
-                {{ macro.displayNewsList(sports) }}
-            </div>
-            <div id="technology" class="tab-pane fade">
-
-                {{ macro.displayNewsList(technology) }}
-            </div>
-            <div id="entertainment" class="tab-pane fade">
-
-                {{ macro.displayNewsList(entertainment) }}
-            </div>
-            <div id="health" class="tab-pane fade">
-
-                {{ macro.displayNewsList(health) }}
-            </div>
-            <div id="business" class="tab-pane fade">
-
-                {{macro.displayNewsList(business)}}
-            </div>
-            <div id="science" class="tab-pane fade">
-
-                {{macro.displayNewsList(science)}}
-            </div> -->
-          <!-- </div>
-    </div> -->
-    <!-- <div class="jumbotron">
-        <p>&copy; 2018 <a href="https://VickyMutai.github.io">bryo</a> and <a href="newsapi.org">NEWS API</a></p>
-    </div> -->
+    <div class="jumbotron"  style="background-color:black;">
+        <p>&copy; 2018 <a href="https://Alampulo.github.">bryo</a> and <a href="newsapi.org">NEWS API</a></p>
+    </div>
