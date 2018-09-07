@@ -6,3 +6,5 @@ img {
 .container-fluid{
   background-color: LIGHTBLUE;
 }
+body { background-image: url("images.jpeg");
+}

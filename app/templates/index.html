@@ -1,13 +1,13 @@
 {% extends 'base.html'%}
 {%block content%}
-<ul style="background-color:violet;">
+<ul style="background-color:grey;  "background-image:url(.app/static/img/images.jpeg);">
 
 <div class="row">
   {%for source in sources%}
   <div class="col-md-4">
 
     <li>  <h4>{{source.name}}</h4></li>
-    <li> <a href='/news/{{source.id}}'>view articles</a></li>
+    <a href='/news/{{source.id}}'>view Articles</a>
 </div>
   {%endfor%}
 </div>
@@ -16,6 +16,6 @@
 
 
     <div class="jumbotron"  style="background-color:black;">
-        <p>&copy; 2018 <a href="https://Alampulo.github.">bryo</a> and <a href="newsapi.org">NEWS API</a></p>
+        <p>&copy; 2018 <a href="https://Alampulo.github.">Bryan Juma</a> and <a href="newsapi.org">NEWS API</a></p>
     </div>
 {%endblock%}
