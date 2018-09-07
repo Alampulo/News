@@ -2,6 +2,7 @@ from flask import render_template,request,redirect,url_for
 from . import main
 from ..request import get_sources,get_articles
 
+
 #views
 @main.route('/')
 def index():
@@ -11,16 +12,10 @@ def index():
     '''
 
     # getting the general sources
-    general_sources = get_sources('general')
-    sports_sources = get_sources('sports')
-    technology_sources = get_sources('technology')
-    entertainment_sources = get_sources('entertainment')
-    business_sources = get_sources('business')
-    health_sources = get_sources('health')
-    science_sources = get_sources('science')
-
-    title = 'Home - Juma's Online News Website'
-    return render_template('index.html',business = business_sources,health=health_sources,science=science_sources,title=title,sports = sports_sources, technology = technology_sources,entertainment = entertainment_sources ,general=general_sources)
+    sources = get_sources()
+    print(sources)
+    title = 'Home - Jumas Online News Website'
+    return render_template('index.html',title=title,sources=sources)
 
 @main.route('/news/<id>')
 def news(id):
@@ -29,5 +24,5 @@ def news(id):
     '''
     articles = get_articles(id)
     title = 'Home - Welcome to the best Online News Website'
-
+    print(articles)
     return render_template('news.html', articles=articles, title=title)

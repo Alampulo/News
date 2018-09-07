@@ -1,15 +1,9 @@
-{% extends 'base.html' %}
-{% import 'macros.html' as macro%}
-<!-- styles block-->
-{% block styles %}
-{{ super() }}
-<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-{% endblock %}
-<!-- end of styles -->
-
-{% block content %}
-<div class="container">
-        <h3>CHECKOUT TOP HEADLINES</h3>
-        <p>{{ macro.displayArticleList(articles) }}</p>
+{%for article in articles%}
+<div class="col-md-5">
+  <h2>{{article.title}}</h2>
+  <h3>{{article.description}}</h3>
+ <img src="{{article.urlToImage}}" alt="image">
+ <h4>source:{{article.source.name}}time published:{{article.publishedAt}}</h4>
+ <a href="{{article.url}}">read more</a>
 </div>
-{% endblock %}
+{%endfor%}

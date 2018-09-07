@@ -1,65 +1,69 @@
 {% extends 'base.html'%}
-{% import 'macros.html' as macro%}
+{%block content%}
+<ul>
+
+
+  {%for source in sources%}
+<li>  <h4>{{source.name}}</h4></li>
+<li> <a href='/news/{{source.id}}'>view articles</a></li>
+  {%endfor%}
+  </ul>
+{%endblock%}
+
+
+
+
+
+
+<!-- {% import 'macros.html' as macro%} -->
 
 <!-- styles block-->
-    {% block styles %}
+    <!-- {% block styles %}
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-    {% endblock %}
+    {% endblock %} -->
 <!-- end of styles -->
 
-    {% block content %}
-    <div class="jumbotron">
-        <h3>NEWS SOURCES</h3>
-           <p> Do you ever wish to catch all your favorite news from one site??</p>
-            <p>Well, we bring the chance closer home. Click on either of the categories and get a link 
-                to your favorite news source and news headlines. You also get a chance to get the entire news straight from its source.
-            </p>
-            <p>Click on the various tabs to continue</p>
-            <hr/>
-    <ul class="nav nav-tabs">
-            <li><a data-toggle="tab" href="#general">GENERAL</a></li>
-            <li><a data-toggle="tab" href="#sports">SPORTS</a></li>
-            <li><a data-toggle="tab" href="#technology">TECHNOLOGY</a></li>
-            <li><a data-toggle="tab" href="#entertainment">ENTERTAINMENT</a></li>
-            <li><a data-toggle="tab" href="#health">HEALTH</a></li>
-            <li><a data-toggle="tab" href="#science">SCIENCE</a></li>
-            <li><a data-toggle="tab" href="#business">BUSINESS</a></li>
-        </ul>
-          <div class="tab-content">
+
+
+          <!-- <div class="tab-content">
 
             <div id="general" class="tab-pane fade">
-               
-                <!--general news section-->
-                {{macro.displayNewsList(general)}}
-            </div>
-            <div id="sports" class="tab-pane fade">
-                <!-- Sports news sources-->
+               <ul>
+
+
+
+                {%for source in sources%}
+                <li>{{source.name}}</li>
+                 {%endfor%}
+                 </ul>
+            </div> -->
+            <!-- <div id="sports" class="tab-pane fade">
+
                 {{ macro.displayNewsList(sports) }}
             </div>
             <div id="technology" class="tab-pane fade">
-                <!-- Technology news sources -->
+
                 {{ macro.displayNewsList(technology) }}
             </div>
             <div id="entertainment" class="tab-pane fade">
-                <!-- Entertainment news sources -->
+
                 {{ macro.displayNewsList(entertainment) }}
             </div>
             <div id="health" class="tab-pane fade">
-                <!-- Health news sources -->
+
                 {{ macro.displayNewsList(health) }}
             </div>
             <div id="business" class="tab-pane fade">
-                <!-- Business news sources -->
+
                 {{macro.displayNewsList(business)}}
             </div>
             <div id="science" class="tab-pane fade">
-                <!--Science news sources-->
+
                 {{macro.displayNewsList(science)}}
-            </div>
-          </div>
-    </div>
-    <div class="jumbotron">
-        <p>&copy; 2018 <a href="https://VickyMutai.github.io">Victoria Mutai</a> and <a href="newsapi.org">NEWS API</a></p>
-    </div>
-    {% endblock %}
+            </div> -->
+          <!-- </div>
+    </div> -->
+    <!-- <div class="jumbotron">
+        <p>&copy; 2018 <a href="https://VickyMutai.github.io">bryo</a> and <a href="newsapi.org">NEWS API</a></p>
+    </div> -->

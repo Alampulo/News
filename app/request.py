@@ -8,18 +8,18 @@ api_key = None
 #getting the  news-base url
 base_url = None
 article_url = None
-
+#
 def configure_request(app):
     global api_key,base_url,article_url
     api_key=app.config['NEWS_API_KEY']
     base_url=app.config['NEWS_API_BASE_URL']
     article_url=app.config['ARTICLE_NEWS_URL']
 
-def get_sources(category):
+def get_sources():
     '''
     Function that gets json response to our url request
     '''
-    get_sources_url = base_url.format(category,api_key)
+    get_sources_url = base_url.format(api_key)
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -82,12 +82,12 @@ def process_articles(articles_list):
     article_results = []
     source_dictionary = {}
     for result in articles_list:
-        source_id = result ['source']
-        source_dictionary['id'] = source_id['id']
-        source_dictionary['name'] = source_id['name']
-        id = source_dictionary['id']
-        name = source_dictionary['name']
-
+        # source_id = result ['source']
+        # source_dictionary['id'] = source_id['id']
+        # source_dictionary['name'] = source_id['name']
+        # id = source_dictionary['id']
+        # name = source_dictionary['name']
+        source= result.get('source')
         author = result.get('author')
         title = result.get('title')
         description = result.get('description')
@@ -97,7 +97,7 @@ def process_articles(articles_list):
 
         if urlToImage:
             print (id)
-            article_object = Article(id,name,author,title,description,url,urlToImage,publishedAt)
+            article_object = Article(source,author,title,description,url,urlToImage,publishedAt)
 
             article_results.append(article_object)
 
